@@ -38,7 +38,7 @@
 
 ## 游戏截图
 
-![游戏截图](https://example.com/screenshot.png)
+![游戏截图](https://github.com/Doitky/ai-vs-player-snake-game/screenshot/screenshot.png)
 
 ## 未来改进计划
 
