@@ -1,0 +1,270 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #3498db;
+    --accent-color: #ff5722;
+    --bg-color: #1a1a2e;
+    --text-color: #f0f0f0;
+    --border-color: #30475e;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --panel-bg: rgba(0, 0, 0, 0.6);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans SC', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #121212, #2c3e50);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1400px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Noto Sans SC', sans-serif;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px var(--shadow-color);
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* 三列布局 */
+.game-layout {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* 侧边面板 */
+.side-panel {
+    background-color: var(--panel-bg);
+    border-radius: 10px;
+    padding: 20px;
+    width: 220px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
+}
+
+.side-panel h3 {
+    color: var(--text-color);
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.side-panel ul {
+    list-style-type: none;
+}
+
+.side-panel li {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* 规则面板 */
+.rules-panel {
+    border-left: 3px solid var(--primary-color);
+}
+
+.rules-panel h3 {
+    color: var(--primary-color);
+}
+
+/* 快捷键面板 */
+.shortcuts-panel {
+    border-left: 3px solid var(--secondary-color);
+}
+
+.shortcuts-panel h3 {
+    color: var(--secondary-color);
+}
+
+/* 游戏中心区域 */
+.game-center {
+    flex: 1;
+    min-width: 0; /* 防止溢出 */
+    background-color: var(--panel-bg);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+/* 玩家信息区域 */
+.game-info {
+    margin-bottom: 15px;
+}
+
+.player-info {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.player {
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    min-width: 120px;
+    flex: 1;
+}
+
+.player-human {
+    background-color: rgba(52, 152, 219, 0.3);
+    border: 2px solid var(--secondary-color);
+}
+
+.player-ai {
+    background-color: rgba(76, 175, 80, 0.3);
+    border: 2px solid var(--primary-color);
+}
+
+.player-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.player-score {
+    font-size: 24px;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.controls-info {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* 画布容器 */
+.canvas-container {
+    background-color: #0f0f1a;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameCanvas {
+    background-color: #0f0f1a;
+    border-radius: 5px;
+    border: 3px solid var(--border-color);
+    display: block;
+    max-width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+/* 游戏控制按钮 */
+.game-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    min-width: 120px;
+    position: relative;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#start-button {
+    background-color: var(--primary-color);
+}
+
+#start-button:hover {
+    background-color: #3d8b40;
+}
+
+#pause-button {
+    background-color: var(--secondary-color);
+}
+
+#pause-button:hover {
+    background-color: #2980b9;
+}
+
+#stop-button {
+    background-color: var(--accent-color);
+}
+
+#stop-button:hover {
+    background-color: #e64a19;
+}
+
+/* 按钮键盘提示 */
+button[data-key]::after {
+    content: attr(data-key);
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+}
+
+/* 响应式设计 */
+@media (max-width: 1100px) {
+    .game-layout {
+        flex-direction: column;
+    }
+    
+    .side-panel {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .side-panel ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+    }
+    
+    .side-panel li {
+        margin-bottom: 0;
+    }
+}

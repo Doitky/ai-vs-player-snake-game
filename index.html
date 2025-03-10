@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI对战贪吃蛇游戏</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>AI对战贪吃蛇游戏</h1>
+        </header>
+        
+        <div class="game-layout">
+            <!-- 左侧 - 游戏规则 -->
+            <div class="side-panel rules-panel">
+                <h3>游戏规则</h3>
+                <ul>
+                    <li>🎮 使用方向键控制你的蛇</li>
+                    <li>🌀 墙壁是传送门 - 蛇可以穿过</li>
+                    <li>💥 不要撞到自己或AI蛇</li>
+                    <li>🍎 收集食物让蛇变长</li>
+                </ul>
+            </div>
+            
+            <!-- 中间 - 游戏区域 -->
+            <div class="game-center">
+                <div class="game-info">
+                    <div class="player-info">
+                        <div class="player player-human">
+                            <div class="player-label">玩家</div>
+                            <div class="player-score" id="playerScore">0</div>
+                            <div class="controls-info">
+                                <span>控制: ↑ ↓ ← →</span>
+                            </div>
+                        </div>
+                        <div class="player player-ai">
+                            <div class="player-label">AI</div>
+                            <div class="player-score" id="aiScore">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="canvas-container">
+                    <canvas id="gameCanvas"></canvas>
+                </div>
+
+                <div class="game-controls">
+                    <button id="start-button" data-key="Enter">开始游戏</button>
+                    <button id="pause-button" data-key="Space">暂停</button>
+                    <button id="stop-button" data-key="Esc">停止游戏</button>
+                </div>
+            </div>
+            
+            <!-- 右侧 - 快捷键 -->
+            <div class="side-panel shortcuts-panel">
+                <h3>快捷键</h3>
+                <ul>
+                    <li>⌨️ 回车键(Enter) - 开始游戏</li>
+                    <li>⌨️ 空格键(Space) - 暂停/继续</li>
+                    <li>⌨️ ESC键 - 停止游戏</li>
+                    <li>⌨️ 方向键 - 控制移动</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/food.js"></script>
+    <script src="js/snake.js"></script>
+    <script src="js/ai-snake.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
